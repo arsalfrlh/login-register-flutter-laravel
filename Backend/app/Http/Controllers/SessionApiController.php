@@ -22,7 +22,7 @@ class SessionApiController extends Controller
         ]);
 
         if($validator->fails()){
-            return response()->json(['message' => 'ada kesalahan', 'data' => $validator]);
+            return response()->json(['message' => 'ada kesalahan', 'data' => $validator->errors()]);
         }
 
         $register = [
@@ -48,7 +48,7 @@ class SessionApiController extends Controller
         ]);
 
         if($validator->fails()){
-            return response()->json(['message' => 'ada kesalahan', 'data' => $validator]);
+            return response()->json(['message' => 'ada kesalahan', 'data' => $validator->errors()]);
         }
 
         $login = $request->all();
